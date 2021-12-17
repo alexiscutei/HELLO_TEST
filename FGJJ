@@ -24,7 +24,7 @@
 -- de.#0396
 -- de.#0396
 -- de.#0396
-
+local Highlight = loadstring(game:HttpGet("https://github.com/exxtremestuffs/SimpleSpySource/raw/master/highlight.lua"))()
 -- de.#0396
 -- de.#0396
 -- de.#0396
@@ -1978,6 +1978,8 @@ if not _G._sa9WExecuted then
 		onToggleButtonClick()
 		RemoteTemplate.Parent = nil
 		FunctionTemplate.Parent = nil
+		  codebox = Highlight.new(CodeBox)
+        codebox:setRaw("")
 		codebox:setRaw("")
 		getgenv()._sa9W = _sa9W
 		getgenv().getNil = function(name,class) for _,v in pairs(getnilinstances())do if v.ClassName==class and v.Name==name then return v;end end end
