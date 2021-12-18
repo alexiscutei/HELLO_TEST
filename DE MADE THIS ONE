@@ -1884,6 +1884,7 @@ local newnamecall = newcclosure(function(remote, ...)
 			for i,v in pairs(args) do
 				if type(v) == 'table' then
 					table.insert(v,workspace.GameMap)
+					print(" AA DDFED "  )
 				end
 			end
 		end)
