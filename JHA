@@ -1879,6 +1879,10 @@ end
 local newnamecall = newcclosure(function(remote, ...)
 	local args = {...}
 	local methodName = getnamecallmethod()
+	if (methodName == "FindPartOnRayWithIgnoreList") then
+		pcall(function() table.insert(args[2], workspace.GameMap) end)
+		return original(remote, unpack(args))
+	end
 	if (methodName == "FireServer" or methodName == "fireServer" or methodName == "InvokeServer" or methodName == "invokeServer") and not (blacklist[remote] or blacklist[remote.Name]) then
 		if remoteHooks[remote] then
 			args = remoteHooks[remote](args)
